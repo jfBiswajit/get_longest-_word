@@ -1,16 +1,15 @@
-<?php
-function getLngWrd($str) {
-  $str = $str;
-  $strArr = explode(' ', $str);
-  $lrgWrd = '';
+<?php 
 
-  for ($i = 0; $i < count($strArr); $i++) {
-    if (strlen($strArr[$i]) > strlen($lrgWrd)) {
-      $lrgWrd = $strArr[$i];
+function largeString($input) {
+  $inputArr = explode(' ', $input);
+  $lrgWrd = '';
+  
+  foreach ($inputArr as $ival) {
+    if (strlen($ival) > strlen($lrgWrd)) {
+      $lrgWrd = $ival;
     }
   }
-
   return $lrgWrd;
 }
 
-echo 'Longest word is: ' . getLngWrd('Hey there Biswajit here!');
+echo largeString('Hi there! Biswajit back again.');
